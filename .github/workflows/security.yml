@@ -1,3 +1,4 @@
+
 name: Security Quality Gate
 
 on:
@@ -68,6 +69,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: powershell
       run: |
-        ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"mbo2olivier_sonarqube-test" /o:"mbo2olivier" /d:sonar.token="$env:SONAR_TOKEN" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.qualitygate.wait=true
-        dotnet build
-        ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="$env:SONAR_TOKEN"
+         ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"cedjo481_Lab8" /o:"cedjo481" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          dotnet build
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
